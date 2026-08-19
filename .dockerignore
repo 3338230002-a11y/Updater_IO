@@ -1,0 +1,10 @@
+.git
+.gitignore
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user
+*.Rproj
+README.md
+LICENSE
+.DS_Store
