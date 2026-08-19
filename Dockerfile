@@ -4,7 +4,13 @@ WORKDIR /srv/shiny-server
 
 COPY . /srv/shiny-server/
 
-RUN R -e "install.packages(c('shiny', 'readxl', 'openxlsx', 'dplyr', 'tidyr', 'DT', 'plotly'), repos='https://cloud.r-project.org')" && \
+RUN R -e "install.packages('shiny', repos='https://cloud.r-project.org')" && \
+    R -e "install.packages('readxl', repos='https://cloud.r-project.org')" && \
+    R -e "install.packages('openxlsx', repos='https://cloud.r-project.org')" && \
+    R -e "install.packages('dplyr', repos='https://cloud.r-project.org')" && \
+    R -e "install.packages('tidyr', repos='https://cloud.r-project.org')" && \
+    R -e "install.packages('DT', repos='https://cloud.r-project.org')" && \
+    R -e "install.packages('plotly', repos='https://cloud.r-project.org')" && \
     R -e "library(plotly); print(packageVersion('plotly'))"
 
 EXPOSE 3838
