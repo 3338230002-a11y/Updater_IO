@@ -4,7 +4,7 @@ WORKDIR /srv/shiny-server
 
 COPY . /srv/shiny-server/
 
-RUN R -e "install.packages(c('shiny', 'readxl', 'openxlsx', 'dplyr', 'tidyr', 'DT'), repos='https://cloud.r-project.org')"
+RUN R -e "install.packages(c('shiny', 'readxl', 'openxlsx', 'dplyr', 'tidyr', 'DT', 'plotly'), repos='https://cloud.r-project.org')"
 
 EXPOSE 3838
 
