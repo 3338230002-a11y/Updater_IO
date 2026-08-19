@@ -1,6 +1,6 @@
 FROM rocker/shiny:latest
 
-# 1. Install system dependencies yang dibutuhkan untuk compile package R (openssl, curl, xml2, font untuk plotly)
+# 1. Install system dependencies (Termasuk libuv1 untuk package 'fs')
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     libcurl4-openssl-dev \
@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libtiff5-dev \
     libjpeg-dev \
+    libuv1 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /srv/shiny-server
